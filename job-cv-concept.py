@@ -1,13 +1,10 @@
 from pymilvus import connections, FieldSchema, CollectionSchema, DataType, Collection, utility
-from dotenv import load_dotenv
-from os import environ as env
 from data import resumes, jobs
 import openai
 import time
 
-load_dotenv()
 # Constants
-openai.api_key = env["OPENAI_API_KEY"]
+openai.api_key = <"OPENAI_API_KEY">
 
 def collection_create(collection_name, dimension):
     if utility.has_collection(collection_name):
